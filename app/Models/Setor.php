@@ -17,4 +17,9 @@ class Setor extends Model
     {
         return $this->hasOne(Departamento::class, 'cod_departamento', 'departamento');
     }
+
+    public function usuarios()
+    {
+        return $this->hasOne(User::class, 'setor', 'cod_setor');
+    }
 }

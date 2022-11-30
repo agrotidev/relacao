@@ -26,7 +26,7 @@ class SetorController extends Controller
     public function show($id)
     {
         try {
-            $setor = $this->setor->with('departamento')->findOrFail($id);
+            $setor = $this->setor->with(['departamento', 'usuarios'])->findOrFail($id);
 
             return response()->json([
                 'data' =>  $setor
