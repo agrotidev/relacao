@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('departamentos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('cod_departamento');
+            $table->bigInteger('cod_departamento')->unique();
             $table->string('nome');
             $table->boolean('ativo')->default(true);
             $table->timestamps();

@@ -18,7 +18,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'code',
         'name',
+        'setor',
         'email',
         'password',
     ];
@@ -41,4 +43,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function setor()
+    {
+        return $this->hasOne(Setor::class, 'cod_setor', 'setor');
+    }
 }

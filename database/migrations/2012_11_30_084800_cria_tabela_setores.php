@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('departamento');
 
-            $table->integer('cod_setor');
+            $table->integer('cod_setor')->unique();
             $table->string('nome');
             $table->boolean('ativo')->default(true);
 

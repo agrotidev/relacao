@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('setor');
 
-            $table->integer('code');
+            $table->integer('code')->unique();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
